@@ -10,7 +10,9 @@ public class PeakColumns {
          * 2. For loop that goes through each row in the matrix
          * 3. Declare maximum value in each row
          * 4. Another for loop for finding if there are many values in the same row
-         * 5. 
+         * 5. Loop through the values found 
+         * 6. Checks through each column to find out if the minimum value is found
+         * 7. The prints the values and indices
          *  
          */
         try {
@@ -65,10 +67,15 @@ public class PeakColumns {
 
         int[][] matrix = new int[rows][cols];
         System.out.println("Please enter the values for the matrix:");
-        for (int[] matrix1 : matrix) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                matrix1[j] = sc.nextInt();
+        //Looping through the number of row and columns to store the values
+        try {
+            for (int[] matrix1 : matrix) {
+                for (int j = 0; j < matrix[0].length; j++) {
+                    matrix1[j] = sc.nextInt();
+                }
             }
+        } catch (Exception e) {
+            System.out.println("Please enter an integer value");
         }
         sc.close();
 
